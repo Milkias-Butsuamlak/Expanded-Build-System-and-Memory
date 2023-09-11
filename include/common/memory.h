@@ -90,4 +90,91 @@ void set_all(char * ptr, char value, unsigned int size);
  */
 void clear_all(char * ptr, unsigned int size);
 
+/**
+ * @brief Move a block of memory with possible overlap.
+ *
+ * This function moves a block of memory from a source location to a destination
+ * location, handling overlap. Copy occurs with no data corruption.
+ *
+ * @param src    Pointer to the source memory location.
+ * @param dst    Pointer to the destination memory location.
+ * @param length Number of bytes to move.
+ *
+ * @return       Pointer to the destination memory location (dst).
+ */
+uint8_t *my_memmove(uint8_t *src, uint8_t *dst, size_t length);
+
+/**
+ * @brief Copy a block of memory.
+ *
+ * This function copies a block of memory from a source location to a destination
+ * location. It does not handle overlap; overlap may corrupt data.
+ *
+ * @param src    Pointer to the source memory location.
+ * @param dst    Pointer to the destination memory location.
+ * @param length Number of bytes to copy.
+ *
+ *
+ * @return       Pointer to the destination memory location (dst).
+ */
+uint8_t *my_memcopy(uint8_t *src, uint8_t *dst, size_t length);
+
+/**
+ * @brief Set all locations in a memory block to a specified value.
+ *
+ * This function sets all locations in a memory block to a specified value.
+ *
+ * @param src    Pointer to the memory location.
+ * @param length Number of bytes to set.
+ * @param value  Value to set at each memory location.
+ *
+ * @return       Pointer to the source memory location (src).
+ */
+uint8_t *my_memset(uint8_t *src, size_t length, uint8_t value);
+
+/**
+ * @brief Zero out all locations in a memory block.
+ *
+ * This function sets all locations in a memory block to zero.
+ *
+ * @param src    Pointer to the memory location.
+ * @param length Number of bytes to zero out.
+ *
+ * @return       Pointer to the source memory location (src).
+ */
+uint8_t *my_memzero(uint8_t *src, size_t length);
+
+/**
+ * @brief Reverse the order of bytes in a memory block.
+ *
+ * This function reverses the order of bytes in a memory block.
+ *
+ * @param src    Pointer to the memory location.
+ * @param length Number of bytes in the memory block.
+ *
+ * @return       Pointer to the source memory location (src).
+ */
+uint8_t *my_reverse(uint8_t *src, size_t length);
+
+/**
+ * @brief Allocate a dynamic memory block for words.
+ *
+ * This function allocates a dynamic memory block for a specified number of words.
+ *
+ * @param length Number of words to allocate.
+ *
+ * @return       Pointer to the allocated memory if successful, NULL if not successful.
+ */
+int32_t *reserve_words(size_t length);
+
+/**
+ * @brief Free a dynamic memory allocation.
+ *
+ * This function releases dynamic memory allocated with malloc.
+ *
+ * @param src    Pointer to the dynamically allocated memory.
+ */
+void free_words(int32_t *src);
+
+
 #endif /* __MEMORY_H__ */

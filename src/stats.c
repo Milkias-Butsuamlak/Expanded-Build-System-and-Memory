@@ -10,12 +10,12 @@
  *****************************************************************************/
 /**
  * @file stats.c
- * @brief sorce file for doing some basic statstics on a given array
+ * @brief sorce file for doing some basic statstics on a given array used for the final assesment using compile time switch enabled with a VERBOSE flag in the make file
  *
- * <Add Extended Description Here>
+ *
  *
  * @author Milkias Butsumalak
- * @date 16/5/2023
+ * @date 1/9/2023
  *
  */
 
@@ -70,13 +70,16 @@ sort_array(test,SIZE);
 
 
  unsigned char print_array (unsigned char *data, unsigned int size) {
-	//print the array elements
-	printf("Array elements:\n");
+	//print the array elements based on a compile time switch
+#ifdef VERBOSE
+	PRINTF("Array elements:\n");
 	for (unsigned int i = 0; i < size; i++) {
-        	printf("%d ", data[i]);
+        	PRINTF("%d ", data[i]);
    	 }
-    	printf("\n");
-
+    	PRINTF("\n");
+#else
+	//nothing will be printed
+#endif
     	return 0; 
  }
 	

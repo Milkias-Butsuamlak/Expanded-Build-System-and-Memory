@@ -11,18 +11,18 @@
 
 # Add your Source files and include paths based on the platform
 ifeq ($(PLATFORM),HOST)
-	SOURCES = main.c \
-		  memory.c 
-	INCLUDES=-I/home/ecee/week_2_assignment/include/common
+	SOURCES =/home/ecee/course1/src/main.c \
+		 /home/ecee/course1/src/ memory.c \
+		/home/ecee/course1/src/ course1.c \
+	       /home/ecee/course1/src/ data.c \
+	       /home/ecee/course1/src/ stats.c \
+       	       
+	INCLUDES=-I/home/ecee/course1/include/common
 else ifeq ($(PLATFORM),MSP432) 
-	SOURCES =main.c \
-		memory.c \
-		interrupts_msp432p401r_gcc.c \
-		startup_msp432p401r_gcc.c \
-	       	system_msp432p401r.c 
-	INCLUDES =-I/home/ecee/week_2_assignment/include/CMSIS \
-		  -I/home/ecee/week_2_assignment/include/common \
-		  -I/home/ecee/week_2_assignment/include/msp432
+	SOURCES =-I/home/ecee/course1/src
+	INCLUDES =-I/home/ecee/course1/include/CMSIS \
+		  -I/home/ecee/course1/include/common \
+		  -I/home/ecee/course1/include/msp432
 endif  
 
 
