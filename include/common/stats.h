@@ -20,7 +20,7 @@
  */
 #ifndef __STATS_H__
 #define __STATS_H__
-
+#include <stdio.h>
 /* Add Your Declarations and Function Comments here */ 
 unsigned char print_statistics (unsigned char *data, unsigned int size);
 

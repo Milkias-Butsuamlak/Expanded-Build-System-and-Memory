@@ -33,11 +33,11 @@ uint8_t my_itoa(int32_t data, uint8_t *ptr, uint32_t base);
  * This function converts an ASCII string representation of an integer to a signed 32-bit integer.
  *
  * @param ptr    Pointer to the source ASCII string.
- * @param digits The number of digits in the character set.
+ * @param numDigits The number of digits in the character set.
  * @param base   The base for the conversion (2 to 16).
  *
  * @return       The converted 32-bit signed integer.
  */
-int32_t my_atoi(uint8_t *ptr, uint8_t digits, uint32_t base);
+int32_t my_atoi(uint8_t *ptr, uint8_t numDigits, uint32_t base);
 
 #endif /* __DATA_H */

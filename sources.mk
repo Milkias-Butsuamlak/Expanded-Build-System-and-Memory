@@ -11,18 +11,26 @@
 
 # Add your Source files and include paths based on the platform
 ifeq ($(PLATFORM),HOST)
-	SOURCES =/home/ecee/course1/src/main.c \
-		 /home/ecee/course1/src/ memory.c \
-		/home/ecee/course1/src/ course1.c \
-	       /home/ecee/course1/src/ data.c \
-	       /home/ecee/course1/src/ stats.c \
+	SOURCES = /home/ecee/course1/src/main.c \
+		  /home/ecee/course1/src/memory.c \
+		  /home/ecee/course1/src/course1.c \
+	          /home/ecee/course1/src/data.c \
+	          /home/ecee/course1/src/stats.c \
        	       
-	INCLUDES=-I/home/ecee/course1/include/common
+	INCLUDES= -I/home/ecee/course1/include/common
 else ifeq ($(PLATFORM),MSP432) 
-	SOURCES =-I/home/ecee/course1/src
-	INCLUDES =-I/home/ecee/course1/include/CMSIS \
-		  -I/home/ecee/course1/include/common \
-		  -I/home/ecee/course1/include/msp432
+	SOURCES = /home/ecee/course1/src/main.c \
+		  /home/ecee/course1/src/memory.c \
+		  /home/ecee/course1/src/course1.c \
+		  /home/ecee/course1/src/data.c \
+		  /home/ecee/course1/src/stats.c \
+		  /home/ecee/course1/src/interrupts_msp432p401r_gcc.c \
+		  /home/ecee/course1/src/startup_msp432p401r_gcc.c \
+		  /home/ecee/course1/src/system_msp432p401r.c
+
+	INCLUDES = -I/home/ecee/course1/include/CMSIS \
+		   -I/home/ecee/course1/include/common \
+		   -I/home/ecee/course1/include/msp432
 endif  
 
 

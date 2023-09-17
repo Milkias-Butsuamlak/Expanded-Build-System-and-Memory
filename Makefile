@@ -27,7 +27,7 @@ include sources.mk
 PLATFORM ?= 
 
 # Architectures Specific Flags
-LINKER_FILE =/home/ecee/week_2_assignment/msp432p401r.lds 
+LINKER_FILE =/home/ecee/course1/msp432p401r.lds 
 CPU = cortex-m4
 ARCV=armv7e-m
 ARCH = thumb
@@ -40,9 +40,21 @@ CC =
 LD = 
 LDFLAGS = -Wl,-Map=$(TARGET).map
 CFLAGS = -Wall -Werror -g -O0 -std=c99
+#CFLAGS += -DVERBOSE
 CPPFLAGS =
-TARGET= c1m2
+TARGET= course1
 
+ifdef COURSE1
+	    CFLAGS += -DCOURSE1
+ else
+        CFLAGS += -DNO_COURSE1
+endif
+
+ifdef VERBOSE
+	    CFLAGS += -DVERBOSE
+ else
+	CFLAGS+=-DNO_VERBOSE
+ endif
 ifeq ($(PLATFORM),HOST)
 	CC=gcc
 	CFLAGS+= -DHOST

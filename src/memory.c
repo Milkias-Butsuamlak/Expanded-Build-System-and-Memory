@@ -21,8 +21,9 @@
  *
  */
 #include "memory.h"
-#include <stdint.h>
 #include <stdlib.h> // Include the standard library for memory allocation functions
+#include <stdint.h>  // To include uint8_t and int32_t types
+#include <stddef.h>  // To include size_t type
 
 /***********************************************************
  Function Definitions
@@ -165,7 +166,7 @@ int32_t *reserve_words(size_t length) {
 
 
 
-void free_words(int32_t *src) {
+void free_words(uint32_t *src) {
     // Check if src is not a NULL pointer
     if (src != NULL) {
         // Free the allocated memory
